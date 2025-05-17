@@ -1,7 +1,6 @@
-data "aws_ami" "ami_instance_id" {
-    filter {
-        name = "tag:Name"
-        values = ["workstation"]
-    }
-    owners = ["099720109477"]
+data "aws_ami" "example" {
+    most_recent      = true
+    name_regex       = "Centos-8-DevOps-Practice"
+    owners           = ["973714476881"]
 }
+
