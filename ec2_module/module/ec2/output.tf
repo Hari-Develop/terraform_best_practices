@@ -1,3 +1,3 @@
-output "instance_id" {
-    value = { for k, inst in aws_instance.ec2 : k => inst.id }
+output "instance_ids" {
+    value = { for k, mod in module.ec2_instances : k => mod.instance_id }
 }
