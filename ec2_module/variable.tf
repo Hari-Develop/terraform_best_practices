@@ -1,3 +1,6 @@
 variable "instances" {
-    type = map(string)
+  type = map(string)
+}
+variable "env" {
+  type = string
 }

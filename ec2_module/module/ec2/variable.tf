@@ -1,10 +1,12 @@
+variable "aws_ami" {
+  type = string
+}
 variable "instance_type" {
-    type = string
+  type = string
 }
-
 variable "instance_name" {
-    type = string
+  type = string
 }
-variable "ami_id" {
-    type = string
+variable "env" {
+  type = string
 }
