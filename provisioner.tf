@@ -8,7 +8,7 @@ resource "aws_instance" "nginx" {
 
 provisioner "remote-exec" {
   inline = [ 
-    "yum install nginx -y"
+    "sudo yum install nginx -y"
    ]
 }
 
@@ -18,6 +18,7 @@ connection {
   user = "centos"
   password = "DevOps321"
 }
+
 }
 
 output "public_ip" {
