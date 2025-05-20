@@ -1,6 +1,6 @@
 # Call the module to create a snapshot of the root EBS volume
 module "snapshot_root_volume" {
-    source        = "./modules/snapshot"
-    volume_id     = tolist(data.aws_instance.instance_id.root_block_device)[0].volume_id
-    env = "prod"
+  source    = "./modules/snapshot"
+  volume_id = tolist(data.aws_instance.instance_id.root_block_device)[0].volume_id
+  env       = "prod"
 }
