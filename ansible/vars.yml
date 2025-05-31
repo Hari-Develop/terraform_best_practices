@@ -26,3 +26,11 @@
     - name: Print vars from file
       ansible.builtin.debug:
         msg: "{{URL}}"
+
+- name: role level varibles
+  hosts: all
+  vars:
+    URL_PLY: "PLY_URL"
+  roles:
+    - sample
+    - sample02
