@@ -34,3 +34,12 @@
   roles:
     - sample
     - sample02
+
+- name: shell module
+  hosts: all
+  tasks:
+    - ansible.builtin.shell: uptime
+      register: output_uptime
+    - ansible.builtin.debug:
+        msg: "{{output_uptime}}"
+
