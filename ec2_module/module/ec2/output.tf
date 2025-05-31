@@ -4,10 +4,8 @@ output "instance_id" {
 
 output "private_ip" {
   value = {
-    for name, instances in aws_instance.aws_ec2_instances: name => {
-      name = name
-      private_ip = aws_instance.aws_ec2_instances[each.key].private_ip
+    for name, instance in aws_instance.aws_ec2_instances :
+    name => instance.private_ip
     }
   }
-}
 
