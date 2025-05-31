@@ -1,0 +1,9 @@
+- name: Demo on play Level varibles
+  hosts: all
+  vars:
+    URL : har_play_com
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL - {{ URL }}
+# In ansible varibles will call by double flower braces
