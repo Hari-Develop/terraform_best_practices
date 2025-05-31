@@ -4,3 +4,6 @@ variable "zone_id" {
 variable "instances" {
   type = string
 }
+variable "records" {
+  type = list(string)
+}
