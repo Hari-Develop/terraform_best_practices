@@ -4,3 +4,7 @@ variable "instances" {
 variable "env" {
   type = string
 }
+
+variable "zone_id" {
+  type = string
+}

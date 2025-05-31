@@ -6,3 +6,10 @@ module "ec2_instances" {
   instance_name = each.key
   env = var.env
 }
+
+module "route_53" {
+  source = "./module/route_53"
+  for_each = var.instances
+  instances = each.key
+  zone_id = var.zone_id
+}
