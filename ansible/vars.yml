@@ -17,3 +17,12 @@
         URL : "task_level_varible"
       ansible.builtin.debug:
         msg: "URL - {{ URL }}"
+
+- name: load vars from a file
+  hosts: all
+  vars_files:
+    - comman_vars.yml
+  tasks:
+    - name: Print vars from file
+      ansible.builtin.debug:
+        msg: "URL"
