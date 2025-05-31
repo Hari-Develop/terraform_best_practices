@@ -14,6 +14,6 @@
   tasks:
     - name: Print URL
       vars: 
-        URL : task_level_varible
+        URL : "task_level_varible"
       ansible.builtin.debug:
-        msg: URL - {{ URL }}
+        msg: "URL - {{ URL }}"
