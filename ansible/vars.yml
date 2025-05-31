@@ -7,3 +7,13 @@
       ansible.builtin.debug:
         msg: URL - {{ URL }}
 # In ansible varibles will call by double flower braces
+
+
+- name: Demo on task level varibles
+  hosts: all
+  tasks:
+    - name: Print URL
+      vars: 
+        URL : task_level_varible
+      ansible.builtin.debug:
+        msg: URL - {{ URL }}
