@@ -1,6 +1,5 @@
-output "dns_name" {
+output "dns_names" {
   value = {
-    for name, inst in aws_route53_record.route_53:
-    name => inst.name
+    for k, v in aws_route53_record.route_53 : k => v.name
   }
 }
