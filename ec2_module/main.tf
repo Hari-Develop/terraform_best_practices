@@ -21,7 +21,6 @@ module "aws_ssm_parameter" {
   type = "String"
   value = each.value.fqdn
   env = var.env
-  instances = var.instances
   tags = {
     Environment = var.env
     Service     = each.key
