@@ -19,7 +19,7 @@ module "aws_ssm_parameter" {
   name = "/${var.env}/${each.key}/dns"
   description = "The public DNS name for NGINX load balancer"
   type = "String"
-  value = each.value[name]
+  value = each.value
   env = var.env
   tags = {
     Environment = var.env
