@@ -10,7 +10,7 @@ module "route_53" {
   for_each = var.instances
   instances = each.key
   zone_id = var.zone_id
-  records = [module.ec2_instances[each.key].private_ip]
+  records = [module.ec2_instances.private_ip[each.key]]
 }
 
 module "aws_ssm_parameter" {
