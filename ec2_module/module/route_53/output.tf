@@ -1,4 +1,6 @@
-output "dns_name" {
-  description = "The DNS record name for this instance"
-  value       = aws_route53_record.route_53.name
+output "dns_record"{
+  value = {
+    for k, rec in aws_route53_record.route_53:
+    k => rec.fqdn
+  }
 }
