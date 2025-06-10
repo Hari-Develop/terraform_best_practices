@@ -14,7 +14,7 @@ module "route_53" {
   domain    = var.domain
   instances = var.instances
   zone_id   = var.zone_id
-  records   = [module.ec2_instances.private_ip[each.key]]
+  records   = [module.ec2_instances[each.key].private_ip]
   name      = "${each.key}.${var.domain}"
 }
 
