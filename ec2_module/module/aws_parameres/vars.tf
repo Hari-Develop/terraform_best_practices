@@ -10,10 +10,7 @@ variable "type" {
 }
 
 variable "value" {
-  description = "Record FQDN for the SSM parameter"
-  type = object({
-    fqdn = string
-  })
+    type = string
 }
 variable "env" {
     type = string
