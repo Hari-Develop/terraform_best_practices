@@ -3,5 +3,5 @@ output "ec2_instances_id" {
 }
 
 output "dns_record"{
-  value = module.route_53.fqdn
+  value = module.route_53.name
 }
