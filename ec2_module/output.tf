@@ -8,5 +8,5 @@ output "dns_record" {
 }
 
 output "private_ip" {
-  value = { for k, mod in aws_instance.aws_ec2_instances : k => mod.private_ip }
+  value = { for k, mod in module.ec2_instances : k => mod.private_ip }
 }
