@@ -10,6 +10,20 @@ module "route_53" {
   for_each = var.instances
   instances = each.key
   zone_id = var.zone_id
-  records = [module.ec2_instances.private_ip[each.key]]
+  records = [module.ec2_instances[each.key].private_ip]
+}
 
+module "aws_ssm_parameter" {
+  source = "./module/aws_parameres"
+  for_each = module.route_53
+  name = "/${var.env}/${each.key}/dns"
+  description = "The public DNS name for NGINX load balancer"
+  type = "String"
+  value = each.value.fqdn
+  env = var.env
+  instances = var.instances
+  tags = {
+    Environment = var.env
+    Service     = each.key
+  }
 }
