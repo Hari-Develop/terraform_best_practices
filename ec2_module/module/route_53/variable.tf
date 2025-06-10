@@ -11,3 +11,7 @@ variable "records" {
 variable "domain" {
   type = string
 }
+
+variable "name" {
+  type = string
+}

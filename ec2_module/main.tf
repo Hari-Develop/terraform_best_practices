@@ -9,9 +9,10 @@ module "route_53" {
   source = "./module/route_53"
   for_each = var.instances
   domain = var.domain
-  instances = each.key
+  instances = var.instances
   zone_id = var.zone_id
   records = [module.ec2_instances.private_ip[each.key]]
+  name    = "${each.key}.${var.domain}"
 }
 
 module "aws_ssm_parameter" {

@@ -6,4 +6,3 @@ resource "aws_ssm_parameter" "nginx_dns" {
     value       = var.value
     tags = var.tags
 }
-
