@@ -3,10 +3,8 @@ module "ec2_instances" {
   for_each      = var.instances
   instance_type = each.value
   aws_ami       = data.aws_ami.ami_instance_id.id
-  env           = var.env
   tags = {
-    Name = each.key
-    env  = var.env
+    Name = "${var.env}-${each.key}"
   }
 }
 
