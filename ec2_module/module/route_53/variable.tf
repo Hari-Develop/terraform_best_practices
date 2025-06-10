@@ -7,3 +7,7 @@ variable "instances" {
 variable "records" {
   type = list(string)
 }
+
+variable "domain" {
+  type = string
+}

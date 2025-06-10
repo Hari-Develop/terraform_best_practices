@@ -8,6 +8,7 @@ module "ec2_instances" {
 module "route_53" {
   source = "./module/route_53"
   for_each = var.instances
+  domain = var.domain
   instances = each.key
   zone_id = var.zone_id
   records = [module.ec2_instances.private_ip[each.key]]
@@ -18,7 +19,7 @@ module "aws_ssm_parameter" {
   name = "/${var.env}/${each.key}/dns"
   description = "The public DNS name for NGINX load balancer"
   type = "String"
-  value = tostring(module.route_53.dns_record[each.value])
+  value = module.route_53[each.key].dns_name
   env = var.env
   tags = {
     Environment = var.env
