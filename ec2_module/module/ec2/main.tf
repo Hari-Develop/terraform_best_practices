@@ -1,9 +1,4 @@
 resource "aws_instance" "aws_ec2_instances" {
-  for_each = var.instances
-  instance_type = each.value
+  instance_type = var.instance_type
   ami = var.aws_ami
-  tags = {
-    Name = each.key
-    env = var.env
-  }
 }
