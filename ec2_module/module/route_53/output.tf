@@ -1,6 +1,7 @@
-output "dns_name" {
+output "route53_record_names" {
+  description = "Map of instance key → Route53 record name"
   value = {
-    for name, record in aws_route53_record.route_53:
-    name => record.fqdn
+    for inst_key, mod in module.route_53 :
+    inst_key => mod.record_name
   }
 }
