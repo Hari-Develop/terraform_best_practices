@@ -1,9 +1,6 @@
 instances = {
     frontened = "t2.micro"
-    user = "t3.micro"
-    login = "t3.micro"
-    database = "t3.micro"
-    application = "t3.micro"
+    catalogue = "t3.micro"
 }
 env = "dev"
 
