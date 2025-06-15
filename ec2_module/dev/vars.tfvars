@@ -1,10 +1,11 @@
 instances = {
-  Frontened = "t2.micro"
-  Catalogue = "t3.micro"
-  MongoDB   = "t3.micro"
-  Redis     = "t3.micro"
-  User      = "t3.micro"
-  Cart      = "t3.micro"
+  frontened = "t2.micro"
+  catalogue = "t3.micro"
+  mongodb   = "t3.micro"
+  redis     = "t3.micro"  
+  user      = "t3.micro"
+  cart      = "t3.micro"
+  payment   = "t3.micro"
 }
 
 env     = "dev"

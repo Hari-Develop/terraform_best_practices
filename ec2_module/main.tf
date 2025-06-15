@@ -15,7 +15,7 @@ module "route_53" {
   instances = var.instances
   zone_id   = var.zone_id
   records   = [module.ec2_instances[each.key].private_ip]
-  name      = "${each.key}.${var.domain}"
+  name      = "${each.key}.${env}.${var.domain}"
 }
 
 module "aws_ssm_parameter" {
