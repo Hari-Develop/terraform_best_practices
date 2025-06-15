@@ -20,11 +20,11 @@ module "route_53" {
 
 module "aws_ssm_parameter" {
   source      = "./module/aws_parameres"
-  for_each = module.route_53
-  name        = "/${var.env}/${each.key}/dns"
+  for_each    = var.parameters
+  name        = each.value.name
   description = "The public DNS name for NGINX load balancer"
   type        = "String"
-  value       = module.route_53[each.key].dns_name
+  value       = each.value.value
   env         = var.env
   tags = {
     Environment = var.env
