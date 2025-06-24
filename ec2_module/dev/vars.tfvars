@@ -5,7 +5,7 @@ instances = {
   redis     = "t3.micro"
   user      = "t3.micro"
   cart      = "t3.micro"
-  payment   = "t3.micro"
+  payment   = "t2.micro"
 }
 
 env     = "dev"
