@@ -16,6 +16,3 @@ module "route_53" {
   records  = [each.value.instance_private_id]
   ttl      = var.ttl
 }
-
-
-
