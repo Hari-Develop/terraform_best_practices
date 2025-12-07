@@ -1,3 +1,3 @@
 variable "instance" {}
 variable "type" {}
-variable "ttl"{}
+variable "ttl" {}

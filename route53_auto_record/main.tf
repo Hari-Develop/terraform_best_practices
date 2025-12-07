@@ -1,5 +1,5 @@
 module "ec2_instances" {
-  source = "./modules/ec2"
+  source        = "./modules/ec2"
   for_each      = var.instance
   ami           = data.aws_ami.redhat.id
   instance_type = each.value.instance_type
@@ -14,7 +14,7 @@ module "route_53" {
   name     = "${each.key}.dotdomain.online"
   type     = var.type
   records  = [each.value.instance_private_id]
-  ttl = var.ttl
+  ttl      = var.ttl
 }
 
 
