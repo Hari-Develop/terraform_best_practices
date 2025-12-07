@@ -13,5 +13,5 @@ module "route_53" {
   zone_id  = data.aws_route53_zone.main.zone_id
   name     = "${each.key}.dotdomain.online"
   type     = var.type
-  records  = each.value.instance_private_id
+  records  = ["each.value.instance_private_id"]
 }
