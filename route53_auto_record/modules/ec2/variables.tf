@@ -12,3 +12,7 @@ variable "region" {
   type        = string
   description = "EC2 instance type"
 }
+variable "name"{
+  type        = string
+  description = "EC2 instance type"
+}

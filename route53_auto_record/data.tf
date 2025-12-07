@@ -14,6 +14,6 @@ data "aws_ami" "redhat" {
 
 
 data "aws_route53_zone" "main" {
-  name = "dotdomain.online"
+  name         = "dotdomain.online"
   private_zone = false
 }
