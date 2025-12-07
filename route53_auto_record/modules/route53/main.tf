@@ -3,4 +3,5 @@ resource "aws_route53_record" "main" {
     name = var.name
     type = var.type
     records = var.records
+    ttl = var.ttl 
 }

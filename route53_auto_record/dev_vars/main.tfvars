@@ -8,3 +8,5 @@ instance = {
 
 
 type = "A" # route53 record type
+
+ttl = "300"
