@@ -1,2 +1,3 @@
 variable "instance" {}
-variable "route53"{}
+variable "type" {}
+variable "ttl"{}

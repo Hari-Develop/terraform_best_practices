@@ -9,10 +9,13 @@ module "ec2_instances" {
 
 module "route_53" {
   source   = "./modules/route53"
-  for_each = var.route53
+  for_each = module.ec2_instances
   zone_id  = data.aws_route53_zone.main.zone_id
-  name     = each.value.name
-  type     = each.value.type
-  records  = each.value.records
-  ttl = each.value.ttl
+  name     = "${each.key}.dotdomain.online"
+  type     = var.type
+  records  = [each.value.instance_private_id]
+  ttl = var.ttl
 }
+
+
+
