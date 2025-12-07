@@ -4,7 +4,7 @@ module "ec2_instances" {
   ami           = data.aws_ami.redhat.id
   instance_type = each.value.instance_type
   region        = each.value.region
-  name          = each.value.name
+  name          = each.key
 }
 
 module "route_53" {
