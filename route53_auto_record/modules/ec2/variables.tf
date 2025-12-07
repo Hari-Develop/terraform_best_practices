@@ -12,4 +12,3 @@ variable "region" {
   type        = string
   description = "EC2 instance type"
 }
-
